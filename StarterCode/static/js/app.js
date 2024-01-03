@@ -1,5 +1,5 @@
 // Fetch the JSON data and call the init function
-d3.json("samples.json").then(data => {
+d3.json("StarterCode/samples.json").then(data => {
     init(data);
 });
 
@@ -70,8 +70,8 @@ function renderMetadata(sample, data) {
 }
 
 function optionChanged(newSample) {
-    // Fetch new data each time a new sample is selected
-    d3.json("samples.json").then(data => {
+    // Fetch new data each time a new sample is selected, ensuring the correct file path
+    d3.json("StarterCode/samples.json").then(data => {
         renderCharts(newSample, data);
         renderMetadata(newSample, data);
     });
